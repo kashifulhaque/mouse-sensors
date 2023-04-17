@@ -15,7 +15,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let result;
   try {
     await client.connect();
-    console.log('connected');
     const collection = await client.db('mouse_db').collection('mouse_collection');
     result = await collection.find({}).toArray();
   } catch(e) {
